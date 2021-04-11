@@ -1,23 +1,3 @@
-fun main() {
-    formatStrings()
-    mutableVariables()
-    println("-------------------------------------")
-    println("Criação de funções de uma linha\n")
-    showHalfLengthString("Criação de funções de uma linha")
-    testOperatorTernary(11)
-    println("-------------------------------------")
-    println("Teste de operador Elvis\n")
-    operatorElvisEqualNullCoalecing()
-    operatorElvisEqualNullCoalecing("Teste")
-    whenTest(10, 20, "Soma")
-    whenTest(10, 20, "Subitração")
-    whenTest(45, 32, "Subitração")
-    rangeInWhen(10, 30)
-    rangeInWhen(10, 40)
-    jumpIndexsInFor(10)
-    downToFor(10)
-}
-
 fun formatStrings() {
     println("-------------------------------------")
     println("Formatação de Strings\n")
@@ -38,9 +18,8 @@ fun formatStrings() {
 
 fun mutableVariables() {
     println("-------------------------------------")
-    val frase: String
     // Apesar de val ser final pro java você pode declarar o valor depois de inicializar
-    frase = "Amendoim"
+    val frase: String = "Amendoim"
     println("Mutação de variaveis final: $frase \n")
 }
 
@@ -96,7 +75,7 @@ fun jumpIndexsInFor(number: Int = 1) {
     println("-------------------------------------")
     println("Executando o estruturar de repetição pulando de $number\n")
     for (i in 0..100 step number) {
-        print("$i ")
+        println("$i")
     }
 }
 
@@ -104,6 +83,33 @@ fun downToFor(number: Int = 1) {
     println("-------------------------------------")
     println("Executando o estruturar de repetição do maior pro menor pulando de $number\n")
     for (i in 100 downTo 0 step number) {
-        print("$i ")
+        println("$i")
     }
+}
+
+fun <T> media(vararg notes: T) {
+    println("-------------------------------------")
+    for (valor in notes) println(valor)
+}
+
+fun main() {
+    formatStrings()
+    mutableVariables()
+    println("-------------------------------------")
+    println("Criação de funções de uma linha\n")
+    showHalfLengthString("Criação de funções de uma linha")
+    testOperatorTernary(11)
+    println("-------------------------------------")
+    println("Teste de operador Elvis\n")
+    operatorElvisEqualNullCoalecing()
+    operatorElvisEqualNullCoalecing("Teste")
+    whenTest(10, 20, "Soma")
+    whenTest(10, 20, "Subitração")
+    whenTest(45, 32, "Subitração")
+    rangeInWhen(10, 30)
+    rangeInWhen(10, 40)
+    jumpIndexsInFor(10)
+    downToFor(10)
+    media(10f, 10f, 20f, 30f)
+    media(10, 10, 20, 30)
 }

@@ -1,3 +1,3 @@
 
-rootProject.name = "Kotlin_Studies"
+rootProject.name = "Kotlin-studies"
 
